@@ -3,4 +3,5 @@ fn main() {
     let a4=54;
     let m34=8.73;
     println!("Hello, world!");
+    let s2:i32 =65;
 }
