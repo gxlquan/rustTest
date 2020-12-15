@@ -5,7 +5,7 @@ use clipboard_win::{formats, get_clipboard, set_clipboard};
 fn main() {
   let re=Regex::new(r"^\d{4}-\d{2}-\d{2}$").unwrap();
   println!("Did our date match? {}",re.is_match("2014-01-01"));
-  let text = "my sample ><";
+  let text = "my s...ample ><";
     
     set_clipboard(formats::Unicode, text).expect("To set clipboard");
     //Type is necessary as string can be stored in various storages
