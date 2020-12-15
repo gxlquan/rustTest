@@ -15,4 +15,5 @@ fn main() {
     enigo.mouse_move_to(1244, 134);
     enigo.mouse_down(MouseButton::Right);
     enigo.mouse_up(MouseButton::Right);
+    let c=2;
 }
