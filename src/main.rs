@@ -8,7 +8,23 @@ use std::time::Duration;
 use keybd_event::KeyboardKey::{KeyA,KeyZ,KeyV,KeyC};
 use keybd_event::KeyBondingInstance;
 use rdev::{listen, Event};
+use std::process;
+
+
+
+fn run_app() {
+  loop {
+    println!("Running...");
+    sleep(Duration::from_millis(500));
+  }
+}
+
+
 fn main() {
+
+  
+  
+
 
   //正则
   // let re=Regex::new(r"的几率额外掉落一叠通货碎片").unwrap();
@@ -56,16 +72,22 @@ fn main() {
     // println!("Did our date match? {}",re.is_match(&result));
 
 
-
-    if let Err(error) = listen(callback) {
-      println!("Error: {:?}", error)
-  }
+  //键盘监听
+  //   if let Err(error) = listen(callback) {
+  //     println!("Error: {:?}", error)
+  // }
   
-  fn callback(event: Event) {
-      println!("My callback {:?}", event);
-      match event.name {
-          Some(string) => println!("User wrote {:?}", string),
-          None => (),
-      }
-  }
+  // fn callback(event: Event) {
+  //     println!("My callback {:?}", event);
+  //     match event.name {
+  //         Some(string) => println!("User wrote {:?}", string),
+  //         None => (),
+  //     }
+  // }
+  run_app();
+  sleep(Duration::from_secs(3));
+  println!("stop.");
+
+    std::process::exit( run_app);
+
 }
