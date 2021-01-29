@@ -73,21 +73,34 @@ fn main() {
 
 
   //键盘监听
-  //   if let Err(error) = listen(callback) {
-  //     println!("Error: {:?}", error)
-  // }
+    if let Err(error) = listen(callback) {
+      println!("Error: {:?}", error)
+  }
   
-  // fn callback(event: Event) {
-  //     println!("My callback {:?}", event);
-  //     match event.name {
-  //         Some(string) => println!("User wrote {:?}", string),
-  //         None => (),
-  //     }
-  // }
-  run_app();
-  sleep(Duration::from_secs(3));
-  println!("stop.");
+  fn callback(event: Event) {
+      // println!("My callback {:?}", event);
+      // match event.name {
+      //     Some(string) => println!("User wrote {:?}", string),
+      //     None => (),
+      // }
+      match event.event_type{
+        rdev::EventType::KeyRelease(rdev::Key::Home) => {
+          println!("home");
+        },
+        rdev::EventType::KeyRelease(rdev::Key::End) => {
+          println!("end");
+        },
+          _ => {},
+      }
 
-    std::process::exit( run_app);
+      // if let rdev::EventType::KeyRelease(rdev::Key::Home)  = event.event_type {
+      //   println!("end")
+      // }
+  }
+  // run_app();
+  // sleep(Duration::from_secs(3));
+  // println!("stop.");
+
+  //   std::process::exit( run_app);
 
 }
