@@ -85,7 +85,7 @@ fn main() {
       // }
       match event.event_type{
         rdev::EventType::KeyRelease(rdev::Key::Home) => {
-          println!("home");
+          println!("home 1");
         },
         rdev::EventType::KeyRelease(rdev::Key::End) => {
           println!("end");
